@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+  --cor-principal-1: #042940;
+  --cor-principal-2: #005C53;
+  --cor-principal-3: #9FC131;
+  --cor-principal-4: #DBF227;
+  --cor-principal-5: #D6D58E;
+
+  --cor-aux-white: #F9F9F9;
+  --cor-aux-black: #1e1e1e;
+
+  --cor-abs-white: #ffffff;
+  --cor-abs-black: #000000;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  
+}
+
+
+.jetbrains-mono-thin {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.jetbrains-mono-regular {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--cor-aux-black);
+}
+
+.jetbrains-mono-extrabold {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
