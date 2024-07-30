@@ -1,0 +1,340 @@
+@import url(main.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    scroll-behavior: smooth;
+}
+
+body,
+.conteudo {
+    display: flex;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    background: var(--cor-aux-white);
+
+
+    /* border: 1px solid red; */
+}
+
+
+.lados {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#lado-exibicao {
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+
+    /* background-color: green; */
+
+    overflow: hidden;
+
+    /* overflow-y: auto; */
+
+}
+
+.mockups{
+    width: 75%;
+    
+    #todos{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        /* border: 1px solid purple; */
+        
+        background: url(/staticFiles/assets/todos.png) no-repeat center center / contain;
+    }
+    
+    #apps{
+        width: 100%;
+        aspect-ratio: 1 / 2;
+        /* border: 1px solid purple; */
+
+        background: url(/staticFiles/assets/apps.png) no-repeat center center;
+    }
+    
+    #websites{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        /* border: 1px solid purple; */
+        
+        background: url(/staticFiles/assets/websites.png) no-repeat center center / contain;
+    }
+    
+    #softwares{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        /* border: 1px solid purple; */
+        
+        background: url(/staticFiles/assets/softwares.png) no-repeat center center / contain;
+    }
+}
+
+#lado-projetos {
+    width: 100%;
+    height: 100%;
+
+    /* padding: 10dvh 10dvh 0 10dvh; */
+
+    overflow: hidden;
+
+    ::-webkit-scrollbar {
+        width: .2dvw;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #1e1e1e30;
+    }
+
+}
+
+.menu-projetos {
+    position: relative;
+    z-index: 1;
+
+    font-size: 1.5em;
+
+    display: flex;
+    justify-content: space-around;
+
+    border-bottom: 1px solid #1e1e1e30;
+
+    .menu-projetos-itens {
+        padding: 10px 0 10px 0;
+        position: relative;
+
+        text-align: center;
+
+        cursor: pointer;
+
+        transition: 0.5s ease-in-out;
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
+
+            width: 0;
+            height: 6px;
+
+            background-color: var(--cor-aux-black);
+
+            transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        &:hover::after {
+            width: 100%;
+            left: 0;
+
+        }
+    }
+
+    .menu-projetos-item-selecionado {
+        color: var(--cor-aux-white);
+        background: var(--cor-aux-black);
+
+        padding: 8px 16px;
+    }
+}
+
+.projetos {
+    height: 100%;
+
+    padding: 0dvh 0 0 0;
+    mask-image: linear-gradient(to top, blue 90%, transparent);
+
+    .lista-projetos {
+        width: 100%;
+        height: 100%;
+
+        overflow-y: auto;
+        /* transition: 1s ease-in-out; */
+
+        .lista-projetos-itens:first-of-type{
+            margin-top: 6dvh;
+            
+        }
+
+        .lista-projetos-itens {
+            width: 95%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            /* background-color: red; */
+
+            border-bottom: 1px solid #1e1e1e30;
+
+            margin: 1dvh;
+
+            overflow: hidden;
+
+            list-style: '> ';
+
+            /* transition: 1s ease-in-out; */
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            /* &:hover {
+
+                height: fit-content;
+                padding: 5dvh;
+
+                background: var(--cor-aux-black);
+                color: var(--cor-aux-white);
+
+                p {
+                    visibility: visible;
+                }
+
+            } */
+
+            a {
+                width: 100%;
+
+                /* background-color: green; */
+
+                text-decoration: none;
+                color: currentColor;
+
+
+            }
+
+            p {
+                padding-left: 10px;
+                /* visibility: hidden; */
+                text-align: justify;
+                text-wrap: stable;
+            }
+
+            h3 {
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            .saiba-mais {
+                width: fit-content;
+                padding: 16px;
+                margin-top: 16px;
+
+
+                display: flex;
+                position: relative;
+
+                /* left: 100px; */
+                transform: translate(10%, 0%);
+
+                color: var(--cor-aux-black);
+                background: var(--cor-aux-white);
+            }
+
+            
+
+
+        }
+    }
+
+
+}
+
+
+.projeto-padrao{
+    height: 8dvh;
+    padding: 2dvh;
+
+    background: var(--cor-aux-white);
+    color: var(--cor-aux-black);
+
+    transition: .3s ease-in-out;
+}
+
+.projeto-selecionado{
+    height: fit-content;
+    padding: 5dvh;
+
+    background: var(--cor-aux-black);
+    color: var(--cor-aux-white);
+
+    transition: .3s ease-in-out;
+}
+
+
+
+@media (min-width: 481px) {
+    #lado-exibicao {
+        span {
+            display: flex;
+
+            height: 100dvh;
+        }
+
+        #apps{
+            width: 100%;
+            aspect-ratio: 1 / 2;
+            /* border: 1px solid purple; */
+    
+            background: url(/staticFiles/assets/apps.png) no-repeat center center;
+            background-size: 60%;
+        }
+    }
+
+    #lado-projetos{
+        padding: 10dvh 10dvh 0 10dvh;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+
+    .conteudo {
+        flex-direction: column;
+    }
+
+    #lado-exibicao {
+        span {
+            display: flex;
+
+            height: 50dvh;
+        }
+
+        #apps{
+            width: 100%;
+            aspect-ratio: 1 / 2;
+            /* border: 1px solid purple; */
+    
+            background: url(/staticFiles/assets/apps.png) no-repeat center center;
+            background-size: 40%;
+        }
+    }
+
+    #lado-projetos{
+        padding: 0;
+        
+        .menu-projetos-itens{
+            font-size: 16px;
+        }
+
+        .lista-projetos{
+            padding: 0 2dvh;
+        }
+    }
+
+    
+}
